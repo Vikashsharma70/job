@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/profile.css">
+<body>  
+  <div class="header">
+    <h1 class="heading">Hello <%= user.username %></h1>
+    <a class="h1" href="/listing/new">Create New Listing</a>
+
+  </div>
+
+  <h2 class="post">Your Posts</h2>
+  
+  <div class="job-listings">
+    <ul>
+      <% if (user.listings && user.listings.length > 0) { %>
+        <% user.listings.forEach(listing => { %>
+          <li class="card">
+            <a href="/listing/<%= listing._id %>"><%= listing.title %></a><br>
+            <span>Submitted: <%= listing.postedDate.toDateString() %></span><br>
+            <span>Deadline: <%= listing.deadline.toDateString() %></span>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <p class="no-listing">No listings found.</p>
+      <% } %>
+    </ul>
+  </div>
+
+</body>

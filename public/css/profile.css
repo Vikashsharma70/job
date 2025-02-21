@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .header {
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+  
+  .post {
+    margin-top: 20px;
+    font-size: 24px;
+    margin-left: 4rem;
+  }
+  
+  .job-listings {
+    margin-top: 20px;
+  }
+  
+  .card {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 300px; /* Adjust the width as needed */
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .h1{
+    text-align: center;
+    font-size: 24px;
+    color: #000000;
+    background: #e5e4e4;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    width: 10%;
+    right: 1rem;
+}
+  
+
+  
+  .no-listing {
+    color: #666;
+    text-align: center;
+  }

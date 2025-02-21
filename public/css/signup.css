@@ -1,0 +1,121 @@
+ body {
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signup-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            background-image: linear-gradient(45deg, #000, #1d262e);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .cross {
+            position: absolute;
+            top: 8rem; /* Adjust the distance from the top */
+            right: 32rem; /* Adjust the distance from the right side */
+            font-size: 24px; /* Adjust the size of the icon */
+            cursor: pointer; /* Change cursor to indicate it's clickable */
+          }
+
+        h2 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            width: 100%;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #000;
+            background: #222;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #fff;
+            color: #000;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-link p {
+            color: #ddd;
+        }
+
+        .login-link a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .signup-container {
+                width: 90%;
+                padding: 30px;
+            }
+        }

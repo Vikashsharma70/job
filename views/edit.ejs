@@ -1,0 +1,86 @@
+
+<% layout('layouts/boilerplate.ejs') -%>
+<link rel="stylesheet" href="/css/edit.css" />
+
+<body>
+  <div class="form-container1">
+    <h1 class="h1">Edit Listing</h1>
+
+    <form 
+      method="POST"
+      action="/listing/<%= listing._id %>?_method=PUT"
+      class="edit-form"
+    >
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        class="input1"
+        name="listing[title]"
+        value="<%= listing.title %>"
+        placeholder="title"
+        required
+      />
+
+      <label for="company">Company:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[company]"
+        value="<%= listing.company %>"
+        placeholder="company"
+        required
+      />
+
+      <label for="location">Location:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[location]"
+        value="<%= listing.location %>"
+        placeholder="location"
+        required
+      />
+
+      <label for="requirements">Requirements:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[requirements]"
+        value="<%= listing.requirements %>"
+        placeholder="requirements"
+      />
+
+      <label for="technology">Technology:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[technology]"
+        value="<%= listing.technology %>"
+        placeholder="technology"
+      />
+
+      <label for="applyLink">Apply Link:</label>
+      <input
+        class="input1"
+        type="url"
+        name="listing[applyLink]"
+        value="<%= listing.applyLink %>"
+        placeholder="apply link"
+        required
+      />
+
+      <label for="postedDate">Posted Date:</label>
+      <input class="input1" type="datetime-local" name="listing[postedDate]" value="<%= listing.postedDate %>" />
+
+      <label for="deadline">Deadline:</label>
+      <input class="input1" type="datetime-local" name="listing[deadline]" value="<%= listing.deadline %>"/>
+
+      <div class="edit-btn1">     
+        <div class="btn2"> <a href="/listing/<%= listing._id %>"><button>← Go Back</button></a></div>
+
+        <div class="btn3"><button type="submit">Submit</button>
+  </div>
+
+  </form>
+  </div>
+</body>

@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate.ejs') %>
+<link rel="stylesheet" href="/css/filter.css">
+    <h2>Filtered</h2>
+    <% if (listings.length > 0) { %>
+        <% listings.forEach(item => { %>
+            <a href="/listing/<%= item._id %>">
+                <div class="filter-container">
+                    <div class="filter-item">
+                        <h3 class="title"><%= item.title %> - <%= item.location %></h3>
+                        <p class="date">Deadline: <%= item.deadline ? item.deadline.toDateString() : "N/A" %></p>
+                        <p class="date">Posted on: <%= item.postedDate ? item.postedDate.toDateString() : "N/A" %></p>
+                    </div>
+                </div>
+            </a>
+        <% }) %>
+    <% } else { %>
+        <p>No listings found.</p>
+    <% } %>
+    
+    
+</body>
+</html>

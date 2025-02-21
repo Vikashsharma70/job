@@ -1,0 +1,76 @@
+<% layout('layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/show.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= listing.title %></h1>
+        <div class="job-details">
+            <span>Company:</span> <%= listing.company %> <br>
+            <span>Location:</span> <%= listing.location %> <br>
+            <span>Requirements:</span> <%= listing.requirements %> <br>
+            <span>Stipend:</span> <%= listing.stipend %> <br>
+            <span>Technology:</span> <%= listing.technology %> <br>
+            <span>Posted Date:</span> <%= listing.postedDate %> <br>
+            <span>Deadline:</span> <%= listing.deadline %> <br>
+            <div class="apply-link">
+                <span>apply link</span>
+                <a href="<%= listing.applyLink %>"><%= listing.applyLink %></a>
+            </div>
+
+
+
+            <% if(listing.owner){%>
+            <p><% listing.owner.username %></p>
+            <p>Current User ID: <%= currUser.username %></p>
+            <p>Listing Owner ID: <%= listing.owner.username %></p>
+            <%} %>
+
+        </div>
+    </div>
+    <% if (currUser && listing.owner && String(currUser._id) === String(listing.owner._id)) { %>
+        <a href="/listing/<%= listing._id %>/edit">Edit</a>
+        <form action="/listing/<%= listing._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    <% } %>
+    
+    
+    <!-- Share Button and Popup -->
+<div class="share-container">
+    <button class="share-btn" onclick="toggleShareOptions('<%= listing._id %>')"><i class="fa-solid fa-share"></i></button>
+    <div id="share-options-<%= listing._id %>" class="share-options">
+      <a href="#" onclick="shareOnFacebook('<%= listing._id %>')">Facebook</a>
+      <a href="#" onclick="shareOnTwitter('<%= listing._id %>')">Twitter</a>
+      <a href="#" onclick="shareOnLinkedIn('<%= listing._id %>')">LinkedIn</a>
+      <a href="https://wa.me/917762836569" target="_blank">Whatsapp</a>
+     </div>
+  </div>
+    <!-- JavaScript for Share Functionality -->
+  <script>
+    function toggleShareOptions(listingId) {
+      const shareOptions = document.getElementById(`share-options-${listingId}`);
+      shareOptions.style.display = shareOptions.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function shareOnFacebook(listingId) {
+      const listing = document.querySelector(`share-options-${listingId}`).parentElement.parentElement;
+      const title = listing.querySelector('h2').innerText;
+      const url = window.location.href;
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(title)}, '_blank'`);
+    }
+
+    function shareOnTwitter(listingId) {
+      const listing = document.querySelector(`share-options-${listingId}`).parentElement.parentElement;
+      const title = listing.querySelector('h2').innerText;
+      const url = window.location.href;
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}, '_blank'`);
+    }
+
+    function shareOnLinkedIn(listingId) {
+      const listing = document.querySelector(`share-options-${listingId}`).parentElement.parentElement;
+      const title = listing.querySelector('h2').innerText;
+      const url = window.location.href;
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}, '_blank'`);
+    }
+  </script>
+</body>

@@ -1,0 +1,108 @@
+.form-container1 {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;  
+    
+    margin: 20px auto;
+   
+}
+.h1{
+    text-align: center;
+    font-size: 24px;
+    color: #000000;
+    background: #e5e4e4;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+.edit-form {
+    display: flex;
+    flex-direction: column;
+   width: 100%;
+}
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.input1 {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+/* button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background: #0056b3;
+} */
+.btn2 {
+   /* Center the button */
+    margin: 20px; /* Add some margin around the button */
+}
+
+.btn2 button {
+     /* Make the link behave like a button */
+   /* Add padding for size */
+    background-color: #ffffff; /* Button background color */
+    color: rgb(0, 0, 0); /* Text color */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 10rem;
+    height: 3rem;
+}
+
+.btn2 button:hover {
+    background-color: #000000;
+    color: #ccc;}
+
+ .btn3 {
+    /* Center the button */
+     margin: 20px; /* Add some margin around the button */
+ }
+ 
+ .btn3 button {
+     /* Make the link behave like a button */
+     /* Add padding for size */
+     background-color: #ffffff; /* Button background color */
+     color: rgb(0, 0, 0); /* Text color */
+     text-decoration: none; /* Remove underline from link */
+     border-radius: 15px; /* Rounded corners */
+     font-size: 16px; /* Font size */
+     transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 10rem;
+    height: 3rem;
+
+ }
+ 
+ .btn3 button:hover {
+      /* Darker shade on hover */
+      background-color: #161616;
+      color: white;
+      
+ }
+
+ .edit-btn1{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+ }

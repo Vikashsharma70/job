@@ -1,0 +1,79 @@
+
+
+<link rel="stylesheet" href="/css/edit.css" />
+<% layout('layouts/boilerplate.ejs') %>
+
+<body>
+  <div class="form-container1">
+    <h1 class="h1">Create New Form</h1>
+    <form action="/listing" method="POST" class="edit-form">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        class="input1"
+        name="listing[title]"
+        placeholder="title"
+        required
+      />
+
+      <label for="company">Company:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[company]"
+        placeholder="company"
+        required
+      />
+
+      <label for="location">Location:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[location]"
+        placeholder="location"
+        required
+      />
+
+      <label for="requirements">Requirements:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[requirements]"
+        placeholder="requirements"
+      />
+
+      <label for="technology">Technology:</label>
+      <input
+        class="input1"
+        type="text"
+        name="listing[technology]"
+        placeholder="technology"
+      />
+
+      <label for="applyLink">Apply Link:</label>
+      <input
+        class="input1"
+        type="url"
+        name="listing[applyLink]"
+        placeholder="apply link"
+        required
+      />
+
+      <label for="postedDate">Posted Date:</label>
+      <input class="input1" type="datetime-local" name="listing[postedDate]" />
+
+      <label for="deadline">Deadline:</label>
+      <input class="input1" type="datetime-local" name="listing[deadline]" />
+
+      <div class="edit-btn1">
+        <div class="btn2"><button type="submit">Submit</button></div>
+
+        <div class="btn3">
+          <a href="/listing"><button>← Go Back</button></a>
+        </div>
+
+        
+      </div>
+    </form>
+  </div>
+</body>
