@@ -26,7 +26,10 @@ const client = new MongoClient(DBurl);
 
 async function main() {
   try {
-    await mongoose.connect(DBurl, { useNewUrlParser: true, useUnifiedTopology: true });
+       mongoose.connect(DBurl, {
+      useNewUrlParser: true,    // Deprecated
+      useUnifiedTopology: true  // Deprecated
+    });
     console.log('✅ Connected to MongoDB');
   } catch (err) {
     console.error('❌ MongoDB connection error:', err);
